@@ -3,7 +3,9 @@ title: Welcome to Middleman
 ---
 
 <div class="welcome">
-  <h1>Middleman is Watching</h1>
+	<% data.experiment.header.each do |id, header| %>
+		<h1><%= header.pageHeading %></h1>
+	<% end %>
   <p class="doc">
     <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
   </p><!-- .doc -->

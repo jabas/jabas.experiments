@@ -47,11 +47,18 @@
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+set :css_dir, 'css'
 
-set :js_dir, 'javascripts'
+set :js_dir, 'js'
 
-set :images_dir, 'images'
+set :images_dir, 'img'
+
+activate :contentful do |f|
+  f.space         = {experiment: 'rcznrevo2b55'}
+  f.access_token  = '26805d3c750626af40270c001603e7601d1d07df078e7438ab22f3f314d519e9'
+  f.cda_query     = { content_type: '2giPNs4MXOSAEigAqsY8yc', include: 1 }
+  f.content_types = { header: '2giPNs4MXOSAEigAqsY8yc'}
+end
 
 # Build-specific configuration
 configure :build do
