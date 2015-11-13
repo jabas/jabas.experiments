@@ -1,0 +1,169 @@
+.billboard {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	color: #fff;
+	background-color: #101F30;
+	font-size: 0;
+
+	&:before,
+	.bb_content {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&:before {
+		content: '';
+	}
+
+	.bb_content {
+		font-size: 16px;
+	}
+}
+
+// Billboard Sizing - Options of Textless, Simple or Verbose
+.bb_textless {
+	height: 130px;
+
+	@media all and (min-width: 768px) {
+		min-height: 280px;
+	}
+}
+
+.bb_simple:before {
+	padding-bottom: 200px;
+
+	@media all and (min-width: 480px) {
+		padding-bottom: 230px;
+	}
+
+	@media all and (min-width: 768px) {
+		padding-bottom: 353px;
+	}
+}
+
+.bb_verbose:before {
+	padding-bottom: 380px;
+
+	@media all and (min-width: 887px) {
+		padding-bottom: 42.857%;
+	}
+
+	@media all and (min-width: 1400px) {
+		padding-bottom: 600px;
+	}
+}
+
+// Billboard Buttons
+.bb_btn {
+	color: inherit;
+	display: inline-block;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 1;
+	letter-spacing: 0.125em;
+	padding: 1em;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	-webkit-transition: background-color 200ms ease-out, color 200ms ease-out;
+	-moz-transition: background-color 200ms ease-out, color 200ms ease-out;
+	-o-transition: background-color 200ms ease-out, color 200ms ease-out;
+	transition: background-color 200ms ease-out, color 200ms ease-out;
+
+	&:hover,
+	&:focus {
+		color: #101F30;
+		background-color: #fff;
+	}
+}
+
+.bb_video-btn {
+	text-indent: -9999px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: image-url('billboard-video-btn.svg');
+	background-size: cover;
+	-webkit-transition: opacity 150ms ease-out;
+	-moz-transition: opacity 150ms ease-out;
+	-o-transition: opacity 150ms ease-out;
+	transition: opacity 150ms ease-out;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	@media all and (min-width: 1024px) {
+		width: 66px;
+		height: 66px;
+	}
+}
+
+// Billboard Content and Responsive Font Sizing
+.bb_content {
+	padding: 32px 20px 40px;
+	max-width: 993px;
+
+	h1 {
+		font-size: 36px;
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	p {
+		line-height: 1.5;
+		margin-bottom: 1.5em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media all and (min-width: 480px) {
+		padding-left: 10%;
+		padding-right: 10%;
+
+		h1 {
+			font-size: 50px;
+		}
+
+		p {
+			font-size: 18px;
+		}
+
+		.bb_btn {
+			font-size: 16px;
+		}
+	}
+
+	@media all and (min-width: 768px) {
+		h1 {
+			font-size: 60px;
+		}
+
+		p {
+			font-size: 21px;
+		}
+
+		.bb_btn {
+			font-size: 18px;
+		}
+	}
+
+	@media all and (min-width: 1024px) {
+		h1 {
+			font-size: 60px;
+		}
+
+		.bb_btn {
+			font-size: 21px;
+		}
+	}
+
+	@media all and (min-width: 1400px) {
+		padding-left: 140px;
+		padding-right: 140px;
+	}
+}
+
+

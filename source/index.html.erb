@@ -1,12 +1,45 @@
 ---
-title: Welcome to Middleman
+title: Jabas | Experimental Billboard
 ---
+<h1>Textless Billboard</h1>
+<div class="billboard bb_textless bg-apples"></div>
 
-<div class="welcome">
-	<% data.experiment.header.each do |id, header| %>
-		<h1><%= header.pageHeading %></h1>
-	<% end %>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<h1>Simple Billboard - Standard</h1>
+<div class="billboard bb_simple bg-apples">
+	<div class="bb_content">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+	</div>
+</div>
+
+<h1>Simple Billboard - Tall</h1>
+<div class="billboard bb_simple bg-apples">
+	<div class="bb_content">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+	</div>
+</div>
+
+<h1>Verbose Billboard - No CTA</h1>
+<div class="billboard bb_verbose bg-apples">
+	<div class="bb_content">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
+	</div>
+</div>
+
+<h1>Verbose Billboard - Button CTA</h1>
+<div class="billboard bb_verbose bg-apples">
+	<div class="bb_content">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
+		<a class="bb_btn" href="#" role="button">Pellentesque</a>
+	</div>
+</div>
+
+<h1>Verbose Billboard - Video CTA</h1>
+<div class="billboard bb_verbose bg-apples">
+	<div class="bb_content">
+		<h1>Lorem ipsum dolor sit amet.</h1>
+		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
+		<a class="bb_video-btn" href="#" role="button">Play Video</a>
+	</div>
+</div>
