@@ -1,0 +1,46 @@
+<%
+
+	# set default values needed for determining billboard type
+	if !locals.has_key?(:cta_type)
+		cta_type = "none"
+	end
+	if !locals.has_key?(:use_tall)
+		use_tall = false
+	end
+	if !locals.has_key?(:banner_bg)
+		banner_bg = "default"
+	end
+
+	# determine billboard type based on local variables included
+	if !locals.has_key?(:headline)
+		banner_type = "textless"
+	elsif !locals.has_key?(:body) && cta_type == "none" && !use_tall
+		banner_type = "simple"
+	else
+		banner_type = "verbose"
+	end
+
+%>
+
+<div class="billboard bb_<%= banner_type %> bg_<%= banner_bg %>">
+
+<% if banner_type != "textless" %>
+	<div class="bb_content">
+		<h1><%= headline %></h1>
+
+		<% if banner_type == "verbose" %>
+			<% if locals.has_key?(:body) %>
+				<p><%= body %></p>
+			<% end %>
+			<% if cta_type == "button" %>
+				<%= link_to btn_txt, btn_url, :target => btn_url.index('http') == 0 ? "_blank" : nil, :class => "bb_btn" %>
+			<% end %>
+			<% if cta_type == "video" %>
+				<%= link_to "Watch Video", video_url, :target => "_blank", :class => "bb_video-btn" %>
+			<% end %>
+		<% end %>
+
+	</div>
+<% end %>
+
+</div>

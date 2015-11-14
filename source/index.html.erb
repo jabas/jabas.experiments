@@ -2,44 +2,19 @@
 title: Jabas | Experimental Billboard
 ---
 <h1>Textless Billboard</h1>
-<div class="billboard bb_textless bg-apples"></div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "apples" } %>
 
 <h1>Simple Billboard - Standard</h1>
-<div class="billboard bb_simple bg-apples">
-	<div class="bb_content">
-		<h1>Lorem ipsum dolor sit amet.</h1>
-	</div>
-</div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "apples", :headline => "Lorem ipsum dolor sit amet." } %>
 
 <h1>Simple Billboard - Tall</h1>
-<div class="billboard bb_simple bg-apples">
-	<div class="bb_content">
-		<h1>Lorem ipsum dolor sit amet.</h1>
-	</div>
-</div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "bananas", :headline => "Lorem ipsum dolor sit amet.", :use_tall => true } %>
 
 <h1>Verbose Billboard - No CTA</h1>
-<div class="billboard bb_verbose bg-apples">
-	<div class="bb_content">
-		<h1>Lorem ipsum dolor sit amet.</h1>
-		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
-	</div>
-</div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "apples", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo." } %>
 
 <h1>Verbose Billboard - Button CTA</h1>
-<div class="billboard bb_verbose bg-apples">
-	<div class="bb_content">
-		<h1>Lorem ipsum dolor sit amet.</h1>
-		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
-		<a class="bb_btn" href="#" role="button">Pellentesque</a>
-	</div>
-</div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "bananas", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "button", :btn_txt => "Pellentesque", :btn_url => "/internal-page/" } %>
 
 <h1>Verbose Billboard - Video CTA</h1>
-<div class="billboard bb_verbose bg-apples">
-	<div class="bb_content">
-		<h1>Lorem ipsum dolor sit amet.</h1>
-		<p>Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.</p>
-		<a class="bb_video-btn" href="#" role="button">Play Video</a>
-	</div>
-</div>
+<%= partial "partials/billboard", :locals => { :banner_bg => "pears", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "video", :video_url => "https://youtu.be/sGbxmsDFVnE" } %>

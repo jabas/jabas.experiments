@@ -3,6 +3,7 @@
 	text-align: center;
 	color: #fff;
 	background-color: #101F30;
+	background-size: cover;
 	font-size: 0;
 
 	&:before,
@@ -166,4 +167,17 @@
 	}
 }
 
+// backgrounds
+.bg_default {
+	background-image: image-url('default-verbose-desktop.jpg');
+}
+.bg_apples {
+	background-image: image-url('apples-verbose-desktop.jpg');
+}
+.bg_bananas {
+	background-image: image-url('bananas-verbose-desktop.jpg');
+}
+.bg_pears {
+	background-image: image-url('pears-verbose-desktop.jpg');
+}
 
