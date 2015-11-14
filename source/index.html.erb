@@ -1,20 +1,23 @@
 ---
 title: Jabas | Experimental Billboard
 ---
-<h1>Textless Billboard</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "apples" } %>
+<h1>Contentful Controlled Billboard</h1>
+<%= partial "partials/billboard", :locals => { :contentful => data.experiment.billboard["7me5LPpFMAi4QwWgy8O2Ws"] } %>
+<h1>Variation Examples</h1>
+<p>Textless Billboard</p>
+<%= partial "partials/billboard", :locals => { :background => "apples" } %>
 
-<h1>Simple Billboard - Standard</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "apples", :headline => "Lorem ipsum dolor sit amet." } %>
+<p>Simple Billboard - Standard</p>
+<%= partial "partials/billboard", :locals => { :background => "apples", :headline => "Lorem ipsum dolor sit amet." } %>
 
-<h1>Simple Billboard - Tall</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "bananas", :headline => "Lorem ipsum dolor sit amet.", :use_tall => true } %>
+<p>Simple Billboard - Tall</p>
+<%= partial "partials/billboard", :locals => { :background => "bananas", :headline => "Lorem ipsum dolor sit amet.", :use_tall => true } %>
 
-<h1>Verbose Billboard - No CTA</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "apples", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo." } %>
+<p>Verbose Billboard - No CTA</p>
+<%= partial "partials/billboard", :locals => { :background => "apples", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo." } %>
 
-<h1>Verbose Billboard - Button CTA</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "bananas", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "button", :btn_txt => "Pellentesque", :btn_url => "/internal-page/" } %>
+<p>Verbose Billboard - Button CTA</p>
+<%= partial "partials/billboard", :locals => { :background => "bananas", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "button", :btn_txt => "Pellentesque", :btn_url => "/internal-page/" } %>
 
-<h1>Verbose Billboard - Video CTA</h1>
-<%= partial "partials/billboard", :locals => { :banner_bg => "pears", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "video", :video_url => "https://youtu.be/sGbxmsDFVnE" } %>
+<p>Verbose Billboard - Video CTA</p>
+<%= partial "partials/billboard", :locals => { :background => "pears", :headline => "Lorem ipsum dolor sit amet.", :body => "Vivamus congue, eros vitae suscipit sagittis, dui ex luctus dolor, id dapibus urna odio sed justo.", :cta_type => "video", :video_url => "https://youtu.be/sGbxmsDFVnE" } %>

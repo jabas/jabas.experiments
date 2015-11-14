@@ -100,6 +100,11 @@
 	}
 }
 
+h1 + .bb_btn,
+h1 + .bb_video-btn {
+	margin-top: 2em;
+}
+
 // Billboard Content and Responsive Font Sizing
 .bb_content {
 	padding: 32px 20px 40px;
