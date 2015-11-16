@@ -2,7 +2,6 @@
 	# translate data supplied from CMS, if used
 	if locals.has_key?(:contentful)
 		
-		# translate contentful values to local variables
 		background = contentful.backgroundImage
 		headline = contentful.header || nil
 		use_tall = contentful.useTallBillboard || false
@@ -12,18 +11,8 @@
 		btn_url = contentful.buttonUrl || nil
 		video_url = contentful.videoUrl || nil
 
-		# determine billboard type based on contentful data
-		if headline.nil?
-			billboard_type = "textless"
-			headline = contentful.header
-		elsif body.nil? && cta_type == "none" && !use_tall
-			billboard_type = "simple"
-		else
-			billboard_type = "verbose"
-		end	
 	# used data listed directly as local variables	
 	else
-		# set default values needed for determining billboard type
 		if !locals.has_key?(:cta_type)
 			cta_type = "none"
 		end
@@ -33,16 +22,16 @@
 		if !locals.has_key?(:background)
 			background = "default"
 		end
-
-		# determine billboard type based on local variables included
-		if !locals.has_key?(:headline)
-			billboard_type = "textless"
-		elsif !locals.has_key?(:body) && cta_type == "none" && !use_tall
-			billboard_type = "simple"
-		else
-			billboard_type = "verbose"
-		end
 	end
+
+	# determine billboard type based on data
+	if headline.nil?
+		billboard_type = "textless"
+	elsif body.nil? && cta_type == "none" && !use_tall
+		billboard_type = "simple"
+	else
+		billboard_type = "verbose"
+	end	
 %>
 
 <div class="billboard bb_<%= billboard_type %> bg_<%= background %>">
