@@ -1,3 +1,8 @@
+$bp-sm: 480px;
+$bp-med: 768px;
+$bp-lrg: 1024px;
+$bp-xlrg: 1400px;
+
 .billboard {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
@@ -23,21 +28,21 @@
 
 // Billboard Sizing - Options of Textless, Simple or Verbose
 .bb_textless {
-	height: 130px;
+	padding-bottom: 130px;
 
-	@media all and (min-width: 768px) {
-		min-height: 280px;
+	@media all and (min-width: $bp-med) {
+		padding-bottom: 280px;
 	}
 }
 
 .bb_simple:before {
 	padding-bottom: 200px;
 
-	@media all and (min-width: 480px) {
+	@media all and (min-width: $bp-sm) {
 		padding-bottom: 230px;
 	}
 
-	@media all and (min-width: 768px) {
+	@media all and (min-width: $bp-med) {
 		padding-bottom: 353px;
 	}
 }
@@ -49,7 +54,7 @@
 		padding-bottom: 42.857%;
 	}
 
-	@media all and (min-width: 1400px) {
+	@media all and (min-width: $bp-xlrg) {
 		padding-bottom: 600px;
 	}
 }
@@ -94,7 +99,7 @@
 		opacity: 0.8;
 	}
 
-	@media all and (min-width: 1024px) {
+	@media all and (min-width: $bp-lrg) {
 		width: 66px;
 		height: 66px;
 	}
@@ -125,7 +130,7 @@ h1 + .bb_video-btn {
 		}
 	}
 
-	@media all and (min-width: 480px) {
+	@media all and (min-width: $bp-sm) {
 		padding-left: 10%;
 		padding-right: 10%;
 
@@ -142,7 +147,7 @@ h1 + .bb_video-btn {
 		}
 	}
 
-	@media all and (min-width: 768px) {
+	@media all and (min-width: $bp-med) {
 		h1 {
 			font-size: 60px;
 		}
@@ -156,7 +161,7 @@ h1 + .bb_video-btn {
 		}
 	}
 
-	@media all and (min-width: 1024px) {
+	@media all and (min-width: $bp-lrg) {
 		h1 {
 			font-size: 60px;
 		}
@@ -166,23 +171,31 @@ h1 + .bb_video-btn {
 		}
 	}
 
-	@media all and (min-width: 1400px) {
+	@media all and (min-width: $bp-xlrg) {
 		padding-left: 140px;
 		padding-right: 140px;
 	}
 }
 
 // backgrounds
-.bg_default {
-	background-image: image-url('default-verbose-desktop.jpg');
-}
-.bg_apples {
-	background-image: image-url('apples-verbose-desktop.jpg');
-}
-.bg_bananas {
-	background-image: image-url('bananas-verbose-desktop.jpg');
-}
-.bg_pears {
-	background-image: image-url('pears-verbose-desktop.jpg');
-}
+$backgrounds: "default" "apples" "bananas" "pears";
+$types: "textless" "simple" "verbose";
 
+@each $bg in $backgrounds {
+	.bg_#{$bg} {
+
+		@each $type in $types {
+			&.bb_#{$type} {
+				background-image: image-url('backgrounds/#{$bg}-#{$type}-768.jpg');
+			}
+		}
+
+		@media all and (min-width: $bp-med) {
+			@each $type in $types {
+				&.bb_#{$type} {
+					background-image: image-url('backgrounds/#{$bg}-#{$type}-1600.jpg');
+				}
+			}
+		}
+	}
+}

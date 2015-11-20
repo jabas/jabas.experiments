@@ -56,8 +56,10 @@ set :images_dir, 'img'
 activate :contentful do |f|
   f.space         = {experiment: 'rcznrevo2b55'}
   f.access_token  = '26805d3c750626af40270c001603e7601d1d07df078e7438ab22f3f314d519e9'
-  f.cda_query     = { content_type: '68ngm5zKRUSmQWUGIYk2ik', include: 1 }
-  f.content_types = { billboard: '68ngm5zKRUSmQWUGIYk2ik'}
+  f.content_types = { 
+    billboard: '68ngm5zKRUSmQWUGIYk2ik', 
+    posting: 'D6AWeJ1GucCE4IWeyeKKK'
+  }
 end
 
 # Build-specific configuration
