@@ -51,7 +51,7 @@ After recieving countless designs that asked for vertically-centered content, I 
 
 ```
 .banner-content {
-  position: relative;
+	position: relative;
 	padding-bottom: 42.857%;
 }
   
@@ -92,7 +92,7 @@ My "a-ha" moment was when I realized that because the inline-block will add padd
 
 	&:before {
 		content: "";
-    padding-bottom: 42.857%;
+		padding-bottom: 42.857%;
 	}
 
 	.bb_content {
@@ -122,7 +122,7 @@ The original version of this required us to define the background-image and its 
 	}
 	.bg_default.bb_verbose {
 		background-image: url("/img/backgrounds/default-verbose-1600.jpg");
- 	}
+	}
 }
 ```
 ## Mission 3: 
@@ -134,14 +134,14 @@ Within Middleman, a Contentful plugin uses their API to pull in data I specify v
 ```
 if locals.has_key?(:contentful)
 		
-		background = contentful.backgroundImage
-		headline = contentful.header || nil
-		use_tall = contentful.useTallBillboard || false
-		body = contentful.body || nil
-		cta_type = contentful.ctaType || "none"
-		btn_txt = contentful.buttonText || nil
-		btn_url = contentful.buttonUrl || nil
-		video_url = contentful.videoUrl || nil
+	background = contentful.backgroundImage
+	headline = contentful.header || nil
+	use_tall = contentful.useTallBillboard || false
+	body = contentful.body || nil
+	cta_type = contentful.ctaType || "none"
+	btn_txt = contentful.buttonText || nil
+	btn_url = contentful.buttonUrl || nil
+	video_url = contentful.videoUrl || nil
 ```
 ## Conclusion
 The code for the ERB partial can be viewed in its entirety at <https://github.com/jabas/jabas.experiments/blob/master/source/partials/_billboard.erb>. The accompanying CSS is at <https://github.com/jabas/jabas.experiments/blob/master/source/css/_billboard.scss> (note, this was stripped out of a fuller library of styles, so a large portion of it is adding back in styles and sizing for the content that would otherwise be housed elsewhere (and rem based sizing).
